@@ -7,6 +7,17 @@
     <title>AI Health Tracker</title>
 
     <style>
+        #stressMood {
+    font-size: 42px;
+    margin-top: 15px;
+}
+
+#stressMessage {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #dbeafe;
+}
+        </style>
         * {
             margin: 0;
             padding: 0;
@@ -394,7 +405,7 @@
             day: "numeric"
         });
 
-    function updateHealth() {
+ function updateHealth() {
     const heartRate = document.getElementById("heartRate").value;
     const oxygen = document.getElementById("oxygen").value;
     const stress = document.getElementById("stress").value;
@@ -415,17 +426,12 @@
     if (stress === "Low") {
         mood.textContent = "😊";
         message.textContent = "You are doing great!";
-        document.body.style.background = "#d9fdd3";
-    } 
-    else if (stress === "Medium") {
+    } else if (stress === "Medium") {
         mood.textContent = "😐";
         message.textContent = "Take a short break and relax.";
-        document.body.style.background = "#fff3cd";
-    } 
-    else if (stress === "High") {
+    } else if (stress === "High") {
         mood.textContent = "😟";
         message.textContent = "Try deep breathing and rest.";
-        document.body.style.background = "#f8d7da";
     }
 }
 
