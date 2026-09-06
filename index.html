@@ -412,6 +412,44 @@
         alert("🤖 Your demo health insight has been generated!");
     }
 </script>
+    </div>
+
+    <script>
+        // The JavaScript code you just pasted
+    </script>
 
 </body>
+</html>
+</body>
+    <script>
+    const today = new Date();
+
+    document.getElementById("date").textContent =
+        today.toLocaleDateString("en-IN", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+
+    function updateHealth() {
+        const heartRate = document.getElementById("heartRate").value;
+        const oxygen = document.getElementById("oxygen").value;
+        const stress = document.getElementById("stress").value;
+
+        if (heartRate !== "") {
+            document.getElementById("heartRateValue").textContent = heartRate;
+        }
+
+        if (oxygen !== "") {
+            document.getElementById("oxygenValue").textContent = oxygen;
+        }
+
+        document.getElementById("stressValue").textContent = stress;
+    }
+
+    function showMessage() {
+        alert("🤖 Your demo health insight has been generated!");
+    }
+</script>
 </html>
