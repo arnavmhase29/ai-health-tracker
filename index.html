@@ -322,6 +322,8 @@
                 <h3>Stress Level</h3>
                 <div class="value">
     <span id="stressValue">Low</span>
+                    <div id="stressMood">😊</div>
+<p id="stressMessage">You are doing great!</p>
 </div>
                 <div class="progress-bg">
                     <div class="progress green" style="width: 25%;"></div>
@@ -393,20 +395,39 @@
         });
 
     function updateHealth() {
-        const heartRate = document.getElementById("heartRate").value;
-        const oxygen = document.getElementById("oxygen").value;
-        const stress = document.getElementById("stress").value;
+    const heartRate = document.getElementById("heartRate").value;
+    const oxygen = document.getElementById("oxygen").value;
+    const stress = document.getElementById("stress").value;
 
-        if (heartRate !== "") {
-            document.getElementById("heartRateValue").textContent = heartRate;
-        }
-
-        if (oxygen !== "") {
-            document.getElementById("oxygenValue").textContent = oxygen;
-        }
-
-        document.getElementById("stressValue").textContent = stress;
+    if (heartRate !== "") {
+        document.getElementById("heartRateValue").textContent = heartRate;
     }
+
+    if (oxygen !== "") {
+        document.getElementById("oxygenValue").textContent = oxygen;
+    }
+
+    document.getElementById("stressValue").textContent = stress;
+
+    const mood = document.getElementById("stressMood");
+    const message = document.getElementById("stressMessage");
+
+    if (stress === "Low") {
+        mood.textContent = "😊";
+        message.textContent = "You are doing great!";
+        document.body.style.background = "#d9fdd3";
+    } 
+    else if (stress === "Medium") {
+        mood.textContent = "😐";
+        message.textContent = "Take a short break and relax.";
+        document.body.style.background = "#fff3cd";
+    } 
+    else if (stress === "High") {
+        mood.textContent = "😟";
+        message.textContent = "Try deep breathing and rest.";
+        document.body.style.background = "#f8d7da";
+    }
+}
 
     function showMessage() {
         alert("🤖 Your demo health insight has been generated!");
