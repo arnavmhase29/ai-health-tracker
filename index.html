@@ -399,6 +399,23 @@
     const oxygen = document.getElementById("oxygen").value;
     const stress = document.getElementById("stress").value;
 
+    // Update Heart Rate
+    if (heartRate !== "") {
+        document.getElementById("heartRateValue").textContent = heartRate;
+    }
+
+    // Update Oxygen Level
+    if (oxygen !== "") {
+        document.getElementById("oxygenValue").textContent = oxygen;
+    }
+
+    // Update Stress Level
+    document.getElementById("stressValue").textContent = stress;
+}
+    const heartRate = document.getElementById("heartRate").value;
+    const oxygen = document.getElementById("oxygen").value;
+    const stress = document.getElementById("stress").value;
+
     if (heartRate !== "") {
         document.getElementById("heartRateValue").textContent = heartRate;
     }
