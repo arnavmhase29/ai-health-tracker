@@ -389,7 +389,13 @@
 
         function showMessage() {
             alert("🤖 Your demo health insight has been generated!");
-        }
+        }function updateHealth() {
+    const heartRate = document.getElementById("heartRate").value;
+
+    if (heartRate !== "") {
+        document.getElementById("heartRateValue").textContent = heartRate;
+    }
+}
     </script>
 
 </body>
