@@ -381,64 +381,37 @@
 
     </div>
 
-    <script>
-        const today = new Date();
+   <script>
+    const today = new Date();
 
-        document.getElementById("date").textContent =
-            today.toLocaleDateString("en-IN", {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric"
-            });
+    document.getElementById("date").textContent =
+        today.toLocaleDateString("en-IN", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
 
-        function showMessage() {
-            alert("🤖 Your demo health insight has been generated!");
-      function updateHealth() {
-    const heartRate = document.getElementById("heartRate").value;
-    const oxygen = document.getElementById("oxygen").value;
-    const stress = document.getElementById("stress").value;
+    function updateHealth() {
+        const heartRate = document.getElementById("heartRate").value;
+        const oxygen = document.getElementById("oxygen").value;
+        const stress = document.getElementById("stress").value;
 
-    // Update Heart Rate
-    if (heartRate !== "") {
-        document.getElementById("heartRateValue").textContent = heartRate;
+        if (heartRate !== "") {
+            document.getElementById("heartRateValue").textContent = heartRate;
+        }
+
+        if (oxygen !== "") {
+            document.getElementById("oxygenValue").textContent = oxygen;
+        }
+
+        document.getElementById("stressValue").textContent = stress;
     }
 
-    // Update Oxygen Level
-    if (oxygen !== "") {
-        document.getElementById("oxygenValue").textContent = oxygen;
+    function showMessage() {
+        alert("🤖 Your demo health insight has been generated!");
     }
-
-    // Update Stress Level
-    document.getElementById("stressValue").textContent = stress;
-}
-    const heartRate = document.getElementById("heartRate").value;
-    const oxygen = document.getElementById("oxygen").value;
-    const stress = document.getElementById("stress").value;
-
-    if (heartRate !== "") {
-        document.getElementById("heartRateValue").textContent = heartRate;
-    }
-
-    if (oxygen !== "") {
-        document.getElementById("oxygenValue").textContent = oxygen;
-    }
-
-    document.getElementById("stressValue").textContent = stress;
-}
-  function updateHealth() {
-    const heartRate = document.getElementById("heartRate").value;
-    const oxygen = document.getElementById("oxygen").value;
-
-    if (heartRate !== "") {
-        document.getElementById("heartRateValue").textContent = heartRate;
-    }
-
-    if (oxygen !== "") {
-        document.getElementById("oxygenValue").textContent = oxygen;
-    }
-}
-    </script>
+</script>
 
 </body>
 </html>
