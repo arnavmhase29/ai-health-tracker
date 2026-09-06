@@ -16,6 +16,13 @@
     font-size: 14px;
     margin-top: 8px;
     color: #dbeafe;
+}#healthWarning {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    display: none;
 }
         </style>
         * {
@@ -322,6 +329,7 @@
     <button class="button" onclick="updateHealth()">
         📊 Update Dashboard
     </button>
+    <div id="healthWarning"></div>
 </section>
 
             <div class="card">
