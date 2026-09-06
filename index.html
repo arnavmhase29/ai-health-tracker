@@ -17,8 +17,6 @@
     margin-top: 8px;
     color: #dbeafe;
 }
-        </style>
-    <style>
         #healthWarning {
     margin-top: 18px;
     padding: 12px;
@@ -27,7 +25,9 @@
     font-weight: 600;
     display: none;
 }
-    </style>
+        </style>
+    
+       
         * {
             margin: 0;
             padding: 0;
@@ -474,6 +474,30 @@
         const heartRate = document.getElementById("heartRate").value;
         const oxygen = document.getElementById("oxygen").value;
         const stress = document.getElementById("stress").value;
+        const warning = document.getElementById("healthWarning");
+
+warning.style.display = "block";
+
+if (heartRate !== "" && Number(heartRate) > 100) {
+    warning.textContent = "⚠️ Your heart rate is high. Consider resting and checking again.";
+    warning.style.background = "#f8d7da";
+    warning.style.color = "#842029";
+} 
+else if (oxygen !== "" && Number(oxygen) < 95) {
+    warning.textContent = "⚠️ Your oxygen level is below the usual range. Please check again.";
+    warning.style.background = "#f8d7da";
+    warning.style.color = "#842029";
+} 
+else if (stress === "High") {
+    warning.textContent = "🧘 Your stress level is high. Try deep breathing and take a short break.";
+    warning.style.background = "#fff3cd";
+    warning.style.color = "#664d03";
+} 
+else {
+    warning.textContent = "✅ Your readings look good. Keep taking care of yourself!";
+    warning.style.background = "#d1e7dd";
+    warning.style.color = "#0f5132";
+}
 
         if (heartRate !== "") {
             document.getElementById("heartRateValue").textContent = heartRate;
