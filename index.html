@@ -349,7 +349,10 @@
                 </div>
 
                 <h3>Oxygen Level</h3>
-                <div class="value">98 <span class="unit">%</span></div>
+                <div class="value">
+    <span id="oxygenValue">98</span>
+    <span class="unit">%</span>
+</div>
                 <div class="progress-bg">
                     <div class="progress purple" style="width: 98%;"></div>
                 </div>
@@ -390,10 +393,16 @@
         function showMessage() {
             alert("🤖 Your demo health insight has been generated!");
         }function updateHealth() {
+  function updateHealth() {
     const heartRate = document.getElementById("heartRate").value;
+    const oxygen = document.getElementById("oxygen").value;
 
     if (heartRate !== "") {
         document.getElementById("heartRateValue").textContent = heartRate;
+    }
+
+    if (oxygen !== "") {
+        document.getElementById("oxygenValue").textContent = oxygen;
     }
 }
     </script>
