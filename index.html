@@ -75,6 +75,54 @@
         }
 
         .dashboard {
+                    .check-in {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .check-in h2 {
+            margin-bottom: 10px;
+        }
+
+        .check-in p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .input-group input,
+        .input-group select {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #475569;
+            background: #1e293b;
+            color: white;
+            font-size: 14px;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: 2px solid #38bdf8;
+        }
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
@@ -190,6 +238,9 @@
 
         @media (max-width: 800px) {
             .dashboard {
+                            .input-grid {
+                grid-template-columns: 1fr;
+            }
                 grid-template-columns: 1fr;
             }
 
@@ -230,6 +281,37 @@
         </section>
 
         <section class="dashboard">
+            <section class="check-in">
+    <h2>📝 Daily Health Check-in</h2>
+    <p>Enter your readings to update your dashboard.</p>
+
+    <div class="input-grid">
+
+        <div class="input-group">
+            <label for="heartRate">❤️ Heart Rate (BPM)</label>
+            <input type="number" id="heartRate" placeholder="Example: 75">
+        </div>
+
+        <div class="input-group">
+            <label for="oxygen">🫁 Oxygen Level (%)</label>
+            <input type="number" id="oxygen" placeholder="Example: 98">
+        </div>
+
+        <div class="input-group">
+            <label for="stress">😊 Stress Level</label>
+            <select id="stress">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        </div>
+
+    </div>
+
+    <button class="button" onclick="updateHealth()">
+        📊 Update Dashboard
+    </button>
+</section>
 
             <div class="card">
                 <div class="card-top">
