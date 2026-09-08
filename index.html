@@ -441,12 +441,37 @@
     } else if (stress === "High") {
         mood.textContent = "😟";
         message.textContent = "Try deep breathing and rest.";
-    }
+  }
 }
 
     function showMessage() {
         alert("🤖 Your demo health insight has been generated!");
     }
+       function saveHealthData() {
+    const healthData = {
+        heartRate: document.getElementById("heartRate").value,
+        oxygen: document.getElementById("oxygen").value,
+        stress: document.getElementById("stress").value
+    };
+
+    localStorage.setItem("healthData", JSON.stringify(healthData));
+}
+
+function loadHealthData() {
+    const savedData = localStorage.getItem("healthData");
+
+    if (savedData) {
+        const healthData = JSON.parse(savedData);
+
+        document.getElementById("heartRate").value = healthData.heartRate;
+        document.getElementById("oxygen").value = healthData.oxygen;
+        document.getElementById("stress").value = healthData.stress;
+
+        updateHealth();
+    }
+}
+
+window.onload = loadHealthData;
 </script>
     </div>
 
